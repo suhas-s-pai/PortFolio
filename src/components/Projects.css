@@ -1,0 +1,215 @@
+.editorial-projects-section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.editorial-projects-header {
+  margin-bottom: 3.5rem;
+}
+
+.projects-editorial-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+}
+
+.editorial-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.editorial-project-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-project-card:hover {
+  border-color: var(--accent-terracotta);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-editorial-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-num-tag {
+  margin-bottom: 0.25rem;
+}
+
+.project-large-num {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+  line-height: 1;
+}
+
+.project-serif-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
+}
+
+.project-subtitle-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.project-editorial-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.project-tech-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.editorial-tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+}
+
+.project-editorial-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.editorial-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.editorial-project-btn:hover {
+  background: var(--text-primary);
+  color: #FFFFFF;
+  border-color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.editorial-project-btn:hover .btn-arrow-icon {
+  transform: translate(2px, -2px);
+}
+
+.btn-arrow-icon {
+  transition: transform 0.2s ease;
+}
+
+/* Right Abstract Project Visual Area */
+.project-editorial-visual-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-abstract-visual {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.editorial-project-card:hover .project-abstract-visual {
+  transform: scale(1.02);
+}
+
+.project-abstract-visual.agrisphere {
+  background: linear-gradient(135deg, #EDE2D3 0%, #F7F1E8 100%);
+}
+.project-abstract-visual.kalisos {
+  background: linear-gradient(135deg, #F3E5D8 0%, #EDE2D3 100%);
+}
+.project-abstract-visual.attendance {
+  background: linear-gradient(135deg, #EBE5DB 0%, #F7F1E8 100%);
+}
+.project-abstract-visual.jathayu {
+  background: linear-gradient(135deg, #F0E8DD 0%, #EDE2D3 100%);
+}
+
+.visual-inner-card {
+  padding: 1.5rem 2rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visual-monogram {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+}
+
+.visual-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 992px) {
+  .editorial-project-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .editorial-project-card {
+    padding: 1.5rem;
+  }
+}

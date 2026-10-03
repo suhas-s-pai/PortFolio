@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal as TerminalIcon, Copy, Check, Play, RefreshCw } from 'lucide-react';
+import { Terminal as TerminalIcon, Copy, Check } from 'lucide-react';
 import './TerminalVisual.css';
 
 export default function TerminalVisual() {
@@ -12,19 +12,19 @@ export default function TerminalVisual() {
     { type: 'command', text: 'focus' },
     { type: 'response', text: 'Java Development + Full Stack Web Architecture' },
     { type: 'command', text: 'status' },
-    { type: 'response', text: '⚡ Building scalable applications & learning constantly' },
+    { type: 'response', text: '⚡ Building practical applications & learning constantly' },
   ]);
 
   const handleCopy = () => {
     const codeSnippet = `class Developer {
     String name = "Suhas S Pai";
-    String role = "CSE Student & Full-Stack Developer";
-    String primaryFocus = "Java & Web Technologies";
+    String role = "CSE Student & Developer";
+    String focus = "Java & Full Stack";
     double cgpa = 9.13;
     int graduation = 2028;
 
     void status() {
-        System.out.println("Building scalable, practical & modern software.");
+        System.out.println("Building practical & scalable software.");
     }
 }`;
     navigator.clipboard.writeText(codeSnippet);
@@ -46,11 +46,11 @@ export default function TerminalVisual() {
     } else if (cmd === 'whoami') {
       newHistory.push({ type: 'response', text: 'Suhas S Pai — CSE Student @ Canara Engineering College' });
     } else if (cmd === 'cgpa' || cmd === 'gpa') {
-      newHistory.push({ type: 'response', text: '🎯 Cumulative GPA: 9.13 / 10.0' });
+      newHistory.push({ type: 'response', text: 'Cumulative GPA: 9.13 / 10.0' });
     } else if (cmd === 'skills') {
-      newHistory.push({ type: 'response', text: '🚀 Java, C, R, JavaScript, SQL | React, Node.js, Express | MySQL, Supabase, Firebase' });
+      newHistory.push({ type: 'response', text: 'Java, C, R, JavaScript, React, Node.js, Express, MySQL, PostgreSQL, Supabase, Firebase' });
     } else if (cmd === 'contact') {
-      newHistory.push({ type: 'response', text: '📫 LinkedIn: suhas-s-pai-072889357 | GitHub: suhas-s-pai' });
+      newHistory.push({ type: 'response', text: 'LinkedIn: suhas-s-pai-072889357 | GitHub: suhas-s-pai' });
     } else if (cmd === 'help') {
       newHistory.push({ type: 'response', text: 'Available commands: whoami, focus, status, skills, cgpa, contact, clear' });
     } else {
@@ -76,7 +76,7 @@ export default function TerminalVisual() {
             className={`term-tab ${activeTab === 'terminal' ? 'active' : ''}`}
             onClick={() => setActiveTab('terminal')}
           >
-            <TerminalIcon size={13} />
+            <TerminalIcon size={12} />
             <span>suhas@dev:~</span>
           </button>
           <button
@@ -93,7 +93,7 @@ export default function TerminalVisual() {
           title="Copy snippet"
           aria-label="Copy snippet"
         >
-          {copied ? <Check size={14} className="copied-icon" /> : <Copy size={14} />}
+          {copied ? <Check size={13} className="copied-icon" /> : <Copy size={13} />}
         </button>
       </div>
 
@@ -117,7 +117,6 @@ export default function TerminalVisual() {
               ))}
             </div>
 
-            {/* CLI Input form */}
             <form onSubmit={handleCommandSubmit} className="cli-input-line">
               <span className="prompt-user">suhas@dev</span>
               <span className="prompt-sym">:~$</span>
@@ -125,7 +124,7 @@ export default function TerminalVisual() {
                 type="text"
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
-                placeholder="type 'help' or commands..."
+                placeholder="type 'help'..."
                 className="cli-input"
               />
             </form>
@@ -136,7 +135,6 @@ export default function TerminalVisual() {
               <span className="kwd">public class</span> <span className="cls">Developer</span> &#123;<br />
               &nbsp;&nbsp;<span className="typ">String</span> name = <span className="str">"Suhas S Pai"</span>;<br />
               &nbsp;&nbsp;<span className="typ">String</span> college = <span className="str">"Canara Engineering College"</span>;<br />
-              &nbsp;&nbsp;<span className="typ">String</span> branch = <span className="str">"Computer Science & Engineering"</span>;<br />
               &nbsp;&nbsp;<span className="typ">double</span> cgpa = <span className="num">9.13</span>;<br />
               &nbsp;&nbsp;<span className="typ">int</span> gradYear = <span className="num">2028</span>;<br /><br />
               &nbsp;&nbsp;<span className="kwd">public void</span> <span className="fnc">buildApp</span>() &#123;<br />
@@ -151,9 +149,9 @@ export default function TerminalVisual() {
       {/* Footer bar */}
       <div className="terminal-footer">
         <div className="term-status-badge">
-          <span className="status-indicator-dot" /> JAVA SE 21 | UTF-8
+          <span className="status-indicator-dot" /> Java Development | UTF-8
         </div>
-        <span className="term-tip">Tip: Type 'skills' or 'cgpa' above</span>
+        <span className="term-tip">Interactive shell</span>
       </div>
     </div>
   );

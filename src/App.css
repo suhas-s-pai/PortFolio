@@ -11,12 +11,3 @@
   position: relative;
   z-index: 1;
 }
-
-/* Global utility classes for glow effects and visual cards */
-.glow-emerald {
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 25px rgba(6, 182, 212, 0.2);
-}

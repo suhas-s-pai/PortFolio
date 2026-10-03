@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import CustomCursor from './components/CustomCursor';
-import ParticleBackground from './components/ParticleBackground';
+import WarmBackground from './components/WarmBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import PersonalStatement from './components/PersonalStatement';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
@@ -14,8 +16,8 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'contact'];
-      const scrollPosition = window.scrollY + 200;
+      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 180;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const sectionEl = document.getElementById(sections[i]);
@@ -35,20 +37,22 @@ export default function App() {
 
   return (
     <div className="portfolio-root">
-      {/* Custom Desktop Glowing Cursor */}
+      {/* Custom Desktop Floating Cursor */}
       <CustomCursor />
 
-      {/* Cinematic Particle Background */}
-      <ParticleBackground />
+      {/* Warm Ambient Background */}
+      <WarmBackground />
 
-      {/* Navigation Bar */}
+      {/* Floating Editorial Navigation Bar */}
       <Navbar activeSection={activeSection} />
 
-      {/* Main Portfolio Sections */}
+      {/* Main Portfolio Content Flow */}
       <main className="main-content">
         <Hero />
         <About />
+        <PersonalStatement />
         <Skills />
+        <Projects />
         <Contact />
       </main>
 

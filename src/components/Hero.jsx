@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Sparkles, ChevronRight, Terminal } from 'lucide-react';
+import { ArrowUpRight, ArrowDown } from 'lucide-react';
 import './Hero.css';
 
 export default function Hero() {
@@ -11,107 +11,128 @@ export default function Hero() {
     }
   };
 
-  // Stagger animation container
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.2,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
   return (
-    <section id="home" className="hero-section">
-      <div className="container hero-container">
+    <section id="home" className="editorial-hero-section">
+      <div className="container hero-editorial-container">
         <motion.div
-          className="hero-content"
+          className="hero-asymmetrical-grid"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Top Pill Badge */}
-          <motion.div variants={itemVariants} className="hero-badge">
-            <span className="badge-pulse" />
-            <Sparkles size={14} className="badge-icon" />
-            <span>COMPUTER SCIENCE & ENGINEERING</span>
-          </motion.div>
+          {/* Left Column: Editorial Headline & Copy */}
+          <div className="hero-left-col">
+            <motion.div variants={itemVariants} className="hero-category-tag">
+              COMPUTER SCIENCE &amp; ENGINEERING
+            </motion.div>
 
-          {/* Main Hero Heading */}
-          <motion.h1 variants={itemVariants} className="hero-heading">
-            Hi, I'm <span className="hero-name-highlight">Suhas S Pai.</span>
-          </motion.h1>
+            <motion.h1 variants={itemVariants} className="hero-author-name">
+              Suhas S Pai
+            </motion.h1>
 
-          {/* Subheading */}
-          <motion.h2 variants={itemVariants} className="hero-subheading">
-            I build modern digital experiences and full-stack applications.
-          </motion.h2>
+            <motion.h2 variants={itemVariants} className="hero-editorial-headline">
+              I build thoughtful digital products with Java &amp; the web.
+            </motion.h2>
 
-          {/* Secondary Description */}
-          <motion.p variants={itemVariants} className="hero-description">
-            Computer Science student and Java-focused developer passionate about building practical, scalable and meaningful software.
-          </motion.p>
+            <motion.p variants={itemVariants} className="hero-editorial-copy">
+              Java-focused developer building practical full-stack applications. I enjoy turning ideas into useful software through clean interfaces, reliable backend systems, and modern web technologies.
+            </motion.p>
 
-          {/* CTA Action Buttons */}
-          <motion.div variants={itemVariants} className="hero-cta-group">
-            <button
-              onClick={() => handleScrollTo('#skills')}
-              className="btn btn-primary"
-            >
-              <span>VIEW MY SKILLS</span>
-              <ChevronRight size={18} className="btn-icon" />
-            </button>
+            {/* CTA Buttons */}
+            <motion.div variants={itemVariants} className="hero-editorial-actions">
+              <button
+                onClick={() => handleScrollTo('#projects')}
+                className="editorial-btn btn-primary"
+              >
+                <span>Explore My Work</span>
+                <ArrowUpRight size={17} />
+              </button>
 
-            <button
-              onClick={() => handleScrollTo('#contact')}
-              className="btn btn-secondary"
-            >
-              <Terminal size={16} />
-              <span>CONTACT ME</span>
-            </button>
-          </motion.div>
+              <button
+                onClick={() => handleScrollTo('#contact')}
+                className="editorial-btn btn-secondary"
+              >
+                <span>Let's Connect</span>
+              </button>
+            </motion.div>
+          </div>
 
-          {/* Quick Highlight Cards */}
-          <motion.div variants={itemVariants} className="hero-pills-row">
-            <div className="hero-pill">
-              <span className="pill-dot emerald" /> Java & Full-Stack
-            </div>
-            <div className="hero-pill">
-              <span className="pill-dot cyan" /> CGPA: 9.13
-            </div>
-            <div className="hero-pill">
-              <span className="pill-dot purple" /> Class of 2028
+          {/* Right Column: Sophisticated Artistic Editorial Visual */}
+          <motion.div variants={itemVariants} className="hero-right-col">
+            <div className="artistic-visual-box">
+              <div className="visual-background-shape" />
+              <div className="visual-accent-circle" />
+
+              {/* Serif Monogram Display */}
+              <div className="visual-monogram-card">
+                <span className="monogram-letter font-serif">S</span>
+                <span className="monogram-letter font-serif accent">S</span>
+                <span className="monogram-letter font-serif">P</span>
+                <div className="monogram-tagline">SUHAS S PAI</div>
+              </div>
+
+              {/* Decorative warm code card snippet */}
+              <div className="visual-floating-badge">
+                <span className="badge-bullet" />
+                <span>Java &amp; Full-Stack Architecture</span>
+              </div>
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Information Strip */}
+        <motion.div
+          className="hero-info-strip"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          <span className="strip-tag">JAVA</span>
+          <span className="strip-divider">•</span>
+          <span className="strip-tag">FULL-STACK</span>
+          <span className="strip-divider">•</span>
+          <span className="strip-tag">BACKEND</span>
+          <span className="strip-divider">•</span>
+          <span className="strip-tag">CSE • 2028</span>
+          <span className="strip-divider">•</span>
+          <span className="strip-tag highlight">CGPA 9.06</span>
+        </motion.div>
       </div>
 
-      {/* Scroll Down Indicator */}
+      {/* Scroll Down Cue */}
       <motion.div
-        className="scroll-indicator"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
+        className="hero-scroll-cue"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.9, duration: 0.5 }}
         onClick={() => handleScrollTo('#about')}
       >
-        <span className="scroll-text">SCROLL TO EXPLORE</span>
+        <span className="cue-text">SCROLL TO READ</span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 5, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          className="scroll-icon-wrapper"
         >
-          <ArrowDown size={16} />
+          <ArrowDown size={14} />
         </motion.div>
       </motion.div>
     </section>

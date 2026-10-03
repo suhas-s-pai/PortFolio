@@ -9,46 +9,49 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer-container">
-      <div className="container footer-content">
-        {/* Left: Copyright */}
-        <div className="footer-left">
-          <span className="footer-brand">SUHAS S PAI</span>
-          <span className="footer-copyright">© 2026 Suhas S Pai. All rights reserved.</span>
+    <footer className="editorial-footer">
+      <div className="container footer-editorial-inner">
+        {/* Left Side: Brand & Tagline */}
+        <div className="footer-left-area">
+          <span className="footer-serif-brand font-serif">SUHAS S PAI</span>
+          <p className="footer-tagline font-mono">
+            Java Developer • Full-Stack Developer • CSE Student
+          </p>
         </div>
 
-        {/* Center: Built with React */}
-        <div className="footer-center">
-          <span>Built with <span className="react-highlight">React</span> &amp; Framer Motion</span>
+        {/* Center: Copyright */}
+        <div className="footer-copyright font-mono">
+          © 2026 Suhas S Pai
         </div>
 
-        {/* Right: Socials & Scroll to Top */}
-        <div className="footer-right">
-          <div className="footer-social-links">
+        {/* Right Side: Links & Scroll Top */}
+        <div className="footer-right-area">
+          <div className="footer-links-row">
             <a
               href="https://github.com/suhas-s-pai"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-social-btn"
-              aria-label="GitHub Profile"
+              className="footer-link-item"
             >
-              <GithubIcon size={18} />
+              <GithubIcon size={15} />
               <span>GitHub</span>
             </a>
             <a
               href="https://www.linkedin.com/in/suhas-s-pai-072889357"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-social-btn"
-              aria-label="LinkedIn Profile"
+              className="footer-link-item"
             >
-              <LinkedinIcon size={18} />
+              <LinkedinIcon size={15} />
               <span>LinkedIn</span>
+            </a>
+            <a href="mailto:suhaspai13@gmail.com" className="footer-link-item">
+              <span>Email</span>
             </a>
           </div>
 
-          <button onClick={scrollToTop} className="back-to-top-btn" aria-label="Scroll to top">
-            <ArrowUp size={16} />
+          <button onClick={scrollToTop} className="footer-scroll-top-btn" aria-label="Scroll to top">
+            <ArrowUp size={15} />
           </button>
         </div>
       </div>
